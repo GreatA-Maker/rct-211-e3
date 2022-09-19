@@ -1,5 +1,5 @@
 //Complete the custom Input component based on the props that it expects to receive
-import { useState } from "react";
+
 import "./Input.css";
 
 export const Input = ({
@@ -9,7 +9,6 @@ export const Input = ({
 	value,
 	onChange,
 }) => {
-	const [values, setValues] = useState(value);
 	return (
 		<input
 			className={`${size || "sm" || "lg" || "xl"} ${
@@ -17,7 +16,7 @@ export const Input = ({
 			}`}
 			type={type}
 			value={value}
-			onChange={setValues((prev) => prev + values)}
+			onChange={value}
 		/>
 	);
 };
